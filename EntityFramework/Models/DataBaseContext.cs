@@ -25,7 +25,7 @@ namespace EntityFramework.Models
             //اگر دیتابیس وجود نداشت ان را میسازد
             //Database.SetInitializer(new CreateDatabaseIfNotExists<DataBaseContext>());
         }
-        public DataBaseContext():base("aa")
+        public DataBaseContext():base("CountyListDataBase")
         {
 
         }

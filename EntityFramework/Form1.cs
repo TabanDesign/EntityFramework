@@ -21,16 +21,32 @@ namespace EntityFramework
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Display();
+        }
+
+        public void Display()
+        {
+            DataBaseContext oDataBaseContext = new DataBaseContext();
+
+            listBox1.DataSource = oDataBaseContext.Countries.ToList();
+            listBox1.ValueMember = "Id";
+            listBox1.DisplayMember = "Displayn";
+            dataGridView1.DataSource = oDataBaseContext.Countries.ToList();
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
             DataBaseContext oDataBaseContext = null;
             try
             {
                 oDataBaseContext = new DataBaseContext();
                 Country oCountry = new Country()
                 {
-                    Id = 1,
-                    Name = "ایران",
+                    Name = txt2.Text.Trim(),
+                    Code = Convert.ToInt32(txt1.Text),
                 };
                 oDataBaseContext.Countries.Add(oCountry);
+
                 oDataBaseContext.SaveChanges();
             }
             catch (Exception ex)
@@ -44,7 +60,14 @@ namespace EntityFramework
                     oDataBaseContext.Dispose();
                     oDataBaseContext = null;
                 }
+                txt1.Text = "";
+                txt2.Text = "";
             }
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            Display();
         }
     }
 }
