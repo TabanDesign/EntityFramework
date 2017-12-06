@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
+    //[ComplexType]        موقعی ک نمیخاهیم تبدیل به جدول شود و نامش با یک دش به کلاس مشتق شده میچسبد
     [Table("CountryList")]
     public class Country
     {
@@ -21,7 +22,7 @@ namespace EntityFramework.Models
         //------------------------
         private string _name;
         [Column("CountryName")]
-        [Required]
+        //[Required]
         [MaxLength(50)]
         public string Name
         {
@@ -32,6 +33,7 @@ namespace EntityFramework.Models
         private int _code;
         [Required]
         [Column("countryCode")]
+        //[NotMapped]
         public int Code
         {
             get { return _code; }
