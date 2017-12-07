@@ -8,21 +8,12 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
-    //[ComplexType]        موقعی ک نمیخاهیم تبدیل به جدول شود و نامش با یک دش به کلاس مشتق شده میچسبد
     [Table("CountryList")]
-    public class Country
+    public class Country:Autoset_Field
     {
-        private Guid _id;
-        [Column("CountryID")]
-        public Guid Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        //------------------------
         private string _name;
         [Column("CountryName")]
-        //[Required]
+        [Required]
         [MaxLength(50)]
         public string Name
         {
@@ -32,12 +23,19 @@ namespace EntityFramework.Models
         //-----------------------------
         private int _code;
         [Required]
-        [Column("countryCode")]
-        //[NotMapped]
+        [Column("CountryCode")]
         public int Code
         {
             get { return _code; }
             set { _code = value; }
+        }
+        //-----------------------------
+        private MoreDetails _more;
+
+        public MoreDetails More
+        {
+            get { return _more; }
+            set { _more = value; }
         }
 
         //-----------------------------
@@ -47,14 +45,14 @@ namespace EntityFramework.Models
             get
             {
                 string dis;
-                dis = string.Format($"Code : {Code}   Name : {Name}");
+                dis = string.Format($"Code : {Code}   Name : {Name} in time : {TimeClass.TimeNow}");
                 return dis;
             }
         }
         //----------------------------------
         public Country()
         {
-            Id = Guid.NewGuid();
+
         }
     }
 }

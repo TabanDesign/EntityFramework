@@ -58,8 +58,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Autoset_Field.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
+    <Compile Include="Models\MoreDetails.cs" />
+    <Compile Include="Models\TimeClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

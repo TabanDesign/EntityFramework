@@ -26,7 +26,6 @@ namespace EntityFramework
         private void Form1_Load(object sender, EventArgs e)
         {
             Display();
-
             EmptyTXT();
         }
         #endregion
@@ -40,7 +39,6 @@ namespace EntityFramework
                 listBox1.DataSource = oDataBaseContext.Countries.Local;
                 listBox1.ValueMember = "Id";
                 listBox1.DisplayMember = "Displayn";
-
             }
             catch (Exception ex)
             {
@@ -60,9 +58,27 @@ namespace EntityFramework
                     Name = txt2.Text.Trim(),
                     Code = Convert.ToInt32(txt1.Text),
                 };
+                oCountry.More = new MoreDetails();
+                if (txt3.Text != "")
+                {
+                    oCountry.More.Area = Convert.ToInt32(txt3.Text);
+                }
+                if (txt4.Text != "")
+                {
+                    oCountry.More.Population = Convert.ToInt32(txt4.Text);
+                }
+
                 oDataBaseContext.Countries.Add(oCountry);
+
                 //از این روش هم میشه ادد کرد
                 //oDataBaseContext.Entry(oCountry).State = EntityState.Added;
+
+                ///
+                ///از این روش نمیشه استفاده کرد ک مستقیم باید از کانتری پر کنیم
+                ///
+                //MoreDetails oMoreDetails = new MoreDetails();
+                //oMoreDetails.Area = Convert.ToInt32(txt3.Text);
+                //oMoreDetails.Population = Convert.ToInt32(txt4.Text);
 
                 oDataBaseContext.SaveChanges();
             }
@@ -179,6 +195,8 @@ namespace EntityFramework
         {
             txt1.Text = "";
             txt2.Text = "";
+            txt3.Text = "";
+            txt4.Text = "";
         }
         #endregion
         #region btnRemoveAll_Click(object sender, EventArgs e)
