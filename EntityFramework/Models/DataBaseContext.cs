@@ -6,13 +6,6 @@ namespace EntityFramework.Models
 {
     public class DataBaseContext:DbContext
     {
-        private DbSet<Country> _countries;
-
-        public DbSet<Country> Countries
-        {
-            get { return _countries; }
-            set { _countries = value; }
-        }
         static DataBaseContext()
         {
             //اگر مدل تغییر کرد دوباره ساخته میشود
@@ -25,6 +18,15 @@ namespace EntityFramework.Models
             //اگر دیتابیس وجود نداشت ان را میسازد
             //Database.SetInitializer(new CreateDatabaseIfNotExists<DataBaseContext>());
         }
+        //----------------------------------------------------------
+        private DbSet<Country> _countries;
+
+        public DbSet<Country> Countries
+        {
+            get { return _countries; }
+            set { _countries = value; }
+        }
+        
         public DataBaseContext():base("CountyListDataBase")
         {
 

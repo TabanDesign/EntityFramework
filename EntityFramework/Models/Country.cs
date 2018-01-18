@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("CountryList")]
-    public class Country:Autoset_Field
+    public class Country : Autoset_Field
     {
         private string _name;
         [Column("CountryName")]

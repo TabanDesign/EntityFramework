@@ -57,8 +57,9 @@ namespace EntityFramework
                 {
                     Name = txt2.Text.Trim(),
                     Code = Convert.ToInt32(txt1.Text),
+
+                    More = new MoreDetails()
                 };
-                oCountry.More = new MoreDetails();
                 if (txt3.Text != "")
                 {
                     oCountry.More.Area = Convert.ToInt32(txt3.Text);
