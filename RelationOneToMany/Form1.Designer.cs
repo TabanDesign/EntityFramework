@@ -1,4 +1,4 @@
-﻿namespace Seed
+﻿namespace RelationOneToMany
 {
     partial class Form1
     {
@@ -28,34 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstPeople = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
-            // 
-            // lstPeople
-            // 
-            this.lstPeople.FormattingEnabled = true;
-            this.lstPeople.ItemHeight = 20;
-            this.lstPeople.Location = new System.Drawing.Point(-4, 5);
-            this.lstPeople.Name = "lstPeople";
-            this.lstPeople.Size = new System.Drawing.Size(561, 404);
-            this.lstPeople.TabIndex = 0;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 414);
-            this.Controls.Add(this.lstPeople);
-            this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstPeople;
     }
 }
 

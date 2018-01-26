@@ -9,60 +9,57 @@ using System.Threading.Tasks;
 
 namespace Seed.Models
 {
-    [Table("PersonTable")]
+    [Table("PersonDetails")]
     public class Person
     {
-        private Guid _id;
+        [Key()]
+        [Required()]
+        [Column("PersonId")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid ID { get; set; }
 
-        public Guid Id
+
+        private FullName _fullName;
+
+        public FullName FullName
         {
-            get { return _id; }
-            set { _id = value; }
+            get {
+                if (_fullName==null)
+                {
+                    _fullName = new FullName();
+                }
+                return _fullName; }
+            set { _fullName = value; }
         }
-        //----------------------------------
-        private string _firstName;
 
-        public string FirstName
+        public Person()
+        {
+            ID = Guid.NewGuid();
+        }
+
+        public Person(string firstName,string lastName):this()
+        {
+            FullName.FirstName = firstName;
+            FullName.LastName = lastName;
+        }
+
+        public Person(string firstName,string middleName,string lastName):this(firstName,lastName)
+        {
+            FullName.MiddleName = middleName;
+        }
+
+        public string DisplayFullName
         {
             get
             {
-                if (_firstName == null)
+                string strFullName = FullName.ToString();
+                if (strFullName==string.Empty)
                 {
-                    return string.Empty;
+                    return ("UnKhnown");
                 }
-                return _firstName; ; 
-            }
-            set { _firstName = value; }
+                return strFullName;
+            ;}
         }
-        //-----------------------------------
-        private string _midleName;
 
-        public string MidleName
-        {
-            get { return _midleName; }
-            set { _midleName = value; }
-        }
-        //-----------------------------------
-        private string _lastName;
-
-        public string LastName
-        {
-            get { return _lastName; }
-            set { _lastName = value; }
-        }
-        //------------------------------------
-        public Person()
-        {
-            _id = Guid.NewGuid();
-        }
-        public Person(string firstName, string midleName, string lastName) :this(firstName,lastName)
-        {
-            _midleName = midleName;
-        }
-        public Person(string firstName, string lastName)
-        {
-            _firstName = firstName;
-            _lastName = lastName;
-        }
     }
 }
