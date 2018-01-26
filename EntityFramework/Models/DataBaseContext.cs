@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.Entity;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 
 namespace EntityFramework.Models
 {

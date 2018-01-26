@@ -1,20 +1,19 @@
-﻿using System;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Seed.Models
 {
+    /// <summary>
+    /// ساختن کلاس کامپلکس که جدول جداگانه تولید نشود
+    /// </summary>
     [ComplexType]
     public class FullName
     {
         [MaxLength(20)]
         private string _firstName;
-
+        /// <summary>
+        /// اجرای لیزی لودینگ که مقداری نال برنگرداند
+        /// </summary>
         public string FirstName
         {
             get
@@ -29,7 +28,9 @@ namespace Seed.Models
         }
         [MaxLength(20)]
         private string _middleName;
-
+        /// <summary>
+        /// اجرای لیزی لودینگ
+        /// </summary>
         public string MiddleName
         {
             get
@@ -44,7 +45,9 @@ namespace Seed.Models
         }
         [MaxLength(30)]
         private string _lastName;
-
+        /// <summary>
+        /// اجرای لیزی لودینگ
+        /// </summary>
         public string LastName
         {
             get
@@ -57,21 +60,37 @@ namespace Seed.Models
             }
             set { _lastName = value; }
         }
+        /// <summary>
+        /// ساختن سازنده پیشفرض
+        /// </summary>
         public FullName()
         {
 
         }
-
+        /// <summary>
+        /// سازنده با دو ورودی
+        /// </summary>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
         public FullName(string firstname, string lastname)
         {
             _firstName = firstname;
             _lastName = lastname;
         }
+        /// <summary>
+        /// سازنده با سه ورودی و از روی دو ورودی ساخته شده است که نخاهیم دوباره درون سازنده پارامتر هارا را به فیلد ها بدهیم
+        /// </summary>
+        /// <param name="firstname"></param>
+        /// <param name="middlename"></param>
+        /// <param name="lastname"></param>
         public FullName(string firstname, string middlename, string lastname) : this(firstname, lastname)
         {
             _middleName = middlename;
         }
-
+        /// <summary>
+        /// ساختن یک تابع اورراید تو استرینگ برای ساختن نام کامل
+        /// </summary>
+        /// <returns>strFullName</returns>
         public override string ToString()
         {
             string strFullName = string.Empty;
@@ -103,7 +122,6 @@ namespace Seed.Models
                     strFullName += " " + LastName;
                 }
             }
-
             return strFullName;
         }
     }

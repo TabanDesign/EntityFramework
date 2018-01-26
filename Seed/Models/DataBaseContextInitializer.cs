@@ -1,19 +1,25 @@
-﻿using System;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
 namespace Seed.Models
 {
+    /// <summary>
+    /// سناریوی دستی
+    /// از سناریوی دوم استفاده میکند و ان را اجرا میکند
+    /// </summary>
     public class DataBaseContextInitializer : DropCreateDatabaseIfModelChanges<DataBaseContext>
     {
+        /// <summary>
+        /// سازنده پیش فرض
+        /// </summary>
         public DataBaseContextInitializer()
         {
         }
+        /// <summary>
+        /// از تابع سید (داده ریزی) استفاده میکند
+        /// این تابع فقط برای اولین بار که دیتابیسی وجود ندارد اجرا میشود
+        /// انواع دادن داده به پرسن
+        /// </summary>
+        /// <param name="dataBaseContext"></param>
         protected override void Seed(DataBaseContext dataBaseContext)
         {
             base.Seed(dataBaseContext);

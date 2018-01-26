@@ -14,10 +14,18 @@ namespace Seed
 {
     public partial class Form1 : Form
     {
+        #region form1()
         public Form1()
         {
             InitializeComponent();
         }
+        #endregion
+        #region form1_load()
+        /// <summary>
+        /// ادد و نمایش برنامه
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -32,7 +40,7 @@ namespace Seed
 
                 dataBaseContext.People.Load();
 
-                lstPeople.ValueMember = "ss";
+                lstPeople.ValueMember = "ID";
                 lstPeople.DisplayMember = "DisplayFullName";
                 lstPeople.DataSource = dataBaseContext.People.Local;
 
@@ -50,5 +58,6 @@ namespace Seed
                 }
             }
         }
+        #endregion
     }
 }
