@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seed", "Seed\Seed.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationOneToMany", "RelationOneToMany\RelationOneToMany.csproj", "{672E0DF4-B297-49B8-985A-7A62623EC352}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi", "FluentApi\FluentApi.csproj", "{FA527C82-9D8C-412F-8FB4-C691B7332B74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{672E0DF4-B297-49B8-985A-7A62623EC352}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672E0DF4-B297-49B8-985A-7A62623EC352}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672E0DF4-B297-49B8-985A-7A62623EC352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
