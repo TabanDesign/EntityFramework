@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationOneToMany", "Relati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi", "FluentApi\FluentApi.csproj", "{FA527C82-9D8C-412F-8FB4-C691B7332B74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casting", "Casting\Casting.csproj", "{895ABE9B-0054-495C-A1EA-316D0324CBEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA527C82-9D8C-412F-8FB4-C691B7332B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{895ABE9B-0054-495C-A1EA-316D0324CBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{895ABE9B-0054-495C-A1EA-316D0324CBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{895ABE9B-0054-495C-A1EA-316D0324CBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{895ABE9B-0054-495C-A1EA-316D0324CBEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

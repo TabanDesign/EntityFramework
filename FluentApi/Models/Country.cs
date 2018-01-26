@@ -21,11 +21,9 @@ namespace FluentApi.Models
                 // Note: Attribute is better!
                 //نام جدول چه باشد
                 ToTable("Countries");
-
                 // Note: Attribute is better!
                 //پرایمری نمودن آی دی
                 HasKey(current => current.ID);
-
                 // Note: Attribute is better!
                 //آی دی اتو اینکریمنت نباشد
                 Property(current => current.ID)

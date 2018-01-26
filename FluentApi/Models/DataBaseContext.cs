@@ -2,14 +2,18 @@
 
 namespace FluentApi.Models
 {
-    public class DataBaseContext:DbContext
+    public class DataBaseContext : DbContext
     {
         static DataBaseContext()
         {
             Database.SetInitializer(new DataBaseContextInitialize());
         }
-        public DataBaseContext():base("FluentApiDB")
+        /// <summary>
+        /// لیزی لودینگ رو توی کانفیگوریشن فعال میکنیم
+        /// </summary>
+        public DataBaseContext() : base("FluentApiDB")
         {
+            Configuration.LazyLoadingEnabled = true;
         }
         public DbSet<State> States { get; set; }
         public DbSet<Country> Countries { get; set; }
