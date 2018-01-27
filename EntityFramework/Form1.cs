@@ -1,14 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Data.Entity;
 using EntityFramework.Models;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EntityFramework
@@ -82,6 +76,7 @@ namespace EntityFramework
                 //oMoreDetails.Population = Convert.ToInt32(txt4.Text);
 
                 oDataBaseContext.SaveChanges();
+                Display();
             }
             catch (Exception ex)
             {
@@ -119,6 +114,8 @@ namespace EntityFramework
                 oDataBaseContext.Countries.Local.Clear();
 
                 oDataBaseContext.SaveChanges();
+
+                Display();
             }
             catch (Exception ex)
             {
@@ -149,6 +146,7 @@ namespace EntityFramework
                 oDataBaseContext.Countries.Local.Clear();
 
                 oDataBaseContext.SaveChanges();
+                Display();
             }
             catch (Exception ex)
             {
@@ -210,6 +208,8 @@ namespace EntityFramework
                 oDataBaseContext.Countries.ToList();
                 oDataBaseContext.Countries.Local.Clear();
                 oDataBaseContext.SaveChanges();
+
+                Display();
             }
             catch (Exception ex)
             {
