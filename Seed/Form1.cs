@@ -26,9 +26,8 @@ namespace Seed
             try
             {
                 dataBaseContext = new DataBaseContext();
-
-                Person person = new Person("mohammad", "saeid", "nazari");
-                dataBaseContext.People.Add(person);
+                //Person person = new Person("mohammad", "saeid", "nazari");
+                //dataBaseContext.People.Add(person);
                 dataBaseContext.SaveChanges();
 
                 dataBaseContext.People.Load();

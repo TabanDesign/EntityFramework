@@ -9,7 +9,7 @@ namespace EntityFramework.Models
         private string _name;
         [Column("CountryName")]
         [Required]
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage ="حداکثر پنجاه حرف"),MinLength(2,ErrorMessage ="حداقل دو حرف")]
         public string Name
         {
             get { return _name; }

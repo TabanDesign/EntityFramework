@@ -5,6 +5,8 @@ namespace Seed.Models
     /// <summary>
     /// سناریوی دستی
     /// از سناریوی دوم استفاده میکند و ان را اجرا میکند
+    /// برای اینکه اجرا شود و هیچ دیتایی توی فرم به دیتا بیس اضافه نکنیم باید مثلا یک لود بزنیم تا
+    /// بره سراغ اینجا
     /// </summary>
     public class DataBaseContextInitializer : DropCreateDatabaseIfModelChanges<DataBaseContext>
     {
