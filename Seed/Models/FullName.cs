@@ -10,7 +10,7 @@ namespace Seed.Models
     public class FullName
     {
         [MaxLength(20)]
-        private string _firstName;
+         private string _firstName;
         /// <summary>
         /// اجرای لیزی لودینگ که مقداری نال برنگرداند
         /// </summary>

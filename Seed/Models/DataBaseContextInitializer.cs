@@ -26,15 +26,9 @@ namespace Seed.Models
         {
             base.Seed(dataBaseContext);
             dataBaseContext.People.Add(new Person("mohammad", "mahdi", "hajian"));
-            //dataBaseContext.People.Add(new Person("ali", "hajian"));
+            dataBaseContext.People.Add(new Person("ali", "hajian"));
 
-            FullName fullName = new FullName
-            {
-                FirstName = "amir",
-                MiddleName = "hesam",
-                LastName = "fafari"
-            };
-            //dataBaseContext.People.Add(new Person() {fullName});
+
 
             dataBaseContext.People.Add(new Person()
             {

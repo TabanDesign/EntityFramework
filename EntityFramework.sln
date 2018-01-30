@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paging", "Paging\Paging.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{CF5FE523-718A-43A1-B704-2296733E56CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "Migration\Migration.csproj", "{CCCC4306-DFE5-44B9-B9FF-940FD5E3FE2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{CF5FE523-718A-43A1-B704-2296733E56CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF5FE523-718A-43A1-B704-2296733E56CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF5FE523-718A-43A1-B704-2296733E56CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCC4306-DFE5-44B9-B9FF-940FD5E3FE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCC4306-DFE5-44B9-B9FF-940FD5E3FE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCC4306-DFE5-44B9-B9FF-940FD5E3FE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCC4306-DFE5-44B9-B9FF-940FD5E3FE2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
