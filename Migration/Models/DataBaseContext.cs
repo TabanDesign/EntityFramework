@@ -11,7 +11,8 @@ namespace Migration.Models
     {
         static DataBaseContext()
         {
-
+            ///روش ادرس دهی
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataBaseContext, Migrations.Configuration>());
         }
         /// <summary>
         /// دستور ساخت خودکار مایگریشن
@@ -19,8 +20,7 @@ namespace Migration.Models
         /// </summary>
         public DataBaseContext() : base("MigrationDB")
         {
-            ///روش ادرس دهی
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataBaseContext, Migrations.Configuration>());
+            
         }
         public DbSet<Person> Persons { get; set; }
     }
