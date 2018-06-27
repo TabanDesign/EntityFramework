@@ -79,9 +79,11 @@ namespace RelationOneToMany
 
                 ///شهر اصفهان را به کشوری که جست و جو شده نسبت میدهد
                 ///ایدی کشوری که جست و  جو شده را به ایدی شهر اصفهان میدهد
-                state = new State();
-                state.Name = "اصفهان";
-                state.CountryId = country.ID;
+                state = new State
+                {
+                    Name = "اصفهان",
+                    CountryId = country.ID
+                };
                 dataBaseContext.States.Add(state);
 
                 ///کل کشوری که جست و جو شده را به قسمت کشوره استان اضافه میکند

@@ -4,6 +4,7 @@ namespace RelationOneToOne.Models
 {
     public class Addess
     {
+        public int ID{ get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
@@ -15,11 +16,11 @@ namespace RelationOneToOne.Models
         public Person Person { get; set; }
 
         #region Configuration()
-        internal class Configuration:EntityTypeConfiguration<Addess>
+        internal class Configuration : EntityTypeConfiguration<Addess>
         {
             public Configuration()
             {
-                HasKey(c => c.PersonID)                     ///پرایمری کردن پرسن ایدی
+                HasKey(c => c.ID)                     ///پرایمری کردن پرسن ایدی
                     .HasRequired(c => c.Person)             ///اجباری کردن پر کردن پرسن یعنی ادرس بدون فرد نمیشود
                     .WithOptional(c => c.Addess)            ///خوده ادرس اختیاری است
                     .WillCascadeOnDelete(true);             ///اگر فرد حذف شد ادرس هم حذف میشود
