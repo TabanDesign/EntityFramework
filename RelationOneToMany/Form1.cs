@@ -3,6 +3,7 @@ using RelationOneToMany.Models;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace RelationOneToMany
 {
@@ -87,15 +88,19 @@ namespace RelationOneToMany
                 dataBaseContext.States.Add(state);
 
                 ///کل کشوری که جست و جو شده را به قسمت کشوره استان اضافه میکند
-                state = new State();
-                state.Name = "تهران";
-                state.Country = country;
+                state = new State
+                {
+                    Name = "تهران",
+                    Country = country
+                };
                 dataBaseContext.States.Add(state);
 
                 ///در کلاس کانتری یک لیست استان داشتیم
                 ///در ان لیست این شهر شیراز را ادد میکند
-                state = new State();
-                state.Name = "شیراز";
+                state = new State
+                {
+                    Name = "شیراز"
+                };
                 country.States.Add(state);
 
                 ///در اخر سیو میکنیم
@@ -115,5 +120,47 @@ namespace RelationOneToMany
             }
         }
         #endregion
+
+        private void btn_ShowRel_Click(object sender, EventArgs e)
+        {
+            DataBaseContext dataBaseContext = null;
+            try
+            {
+                dataBaseContext = new DataBaseContext();
+
+                Country country = new Country();
+
+                // یک کانتری که میخاهیم شهر هایش نمایش داده شود را بیرون میکشیم
+                var oCountry = dataBaseContext.Countries.Where(c => c.ID == 1).FirstOrDefault();
+
+                // برای نمایش
+                int i = 0;
+                string qq = "";
+
+                // روی ان کشور حلقه میزنیم برای نمایش
+                // و میگوییم روی شهر های کانتری حلقه بزن
+                foreach (var item in oCountry.States)
+                {
+                    qq += item.Name + "\n\n";
+                    while (i == 2)
+                    {
+                        MessageBox.Show(qq);
+                        i++;
+                    }
+                    i++;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                if (dataBaseContext!=null)
+                {
+                    dataBaseContext.Dispose();
+                    dataBaseContext = null;
+                }
+            }
+        }
     }
 }

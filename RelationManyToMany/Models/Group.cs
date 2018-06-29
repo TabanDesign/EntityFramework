@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace RelationManyToMany.Models
 {
@@ -25,12 +27,13 @@ namespace RelationManyToMany.Models
             }
         }
         #endregion
-        public Guid ID { get; set; }
+        [Key()]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
         public string Name { get; set; }
         public virtual IList<User> Users { get; set; }
         public Group()
         {
-            ID = Guid.NewGuid();
         }
     }
 }

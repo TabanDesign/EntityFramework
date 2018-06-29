@@ -43,10 +43,8 @@ namespace Casting
             //ایجاد یک شی از کانتری که حاوی  آیتم های لیست که کانتری هستند هست 
             //حرفه ای ترین شکل کستینگ
             //معنی آن یعنی اگر لیست آیتم نداشت شی کانتری نال است اگر آیتم داشت کانتری نبود باز هم نال است در غیر اینصورت شی کانتری حاوی آیتم های لیست میباشد
-            Country oCountry =
-                lstCountry.SelectedItem as Country;
 
-            if (oCountry != null)
+            if (lstCountry.SelectedItem is Country oCountry)
             {
                 //تنظیمات لیست
                 lstState.ValueMember = "ID";
