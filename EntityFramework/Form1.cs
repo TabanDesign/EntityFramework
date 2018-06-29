@@ -77,6 +77,7 @@ namespace EntityFramework
 
                 oDataBaseContext.SaveChanges();
                 Display();
+
             }
             catch (Exception ex)
             {

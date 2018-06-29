@@ -7,8 +7,9 @@ namespace EntityFramework.Models
     public class Country : Autoset_Field
     {
         private string _name;
-        [Column("CountryName",Order =0,TypeName ="VarChar")]
+        [Column("CountryName",Order =0,TypeName ="nvarChar")]
         [Required]
+        [Index(IsUnique =true)]
         [MaxLength(50, ErrorMessage ="حداکثر پنجاه حرف"),MinLength(2,ErrorMessage ="حداقل دو حرف")]
         public string Name
         {
